@@ -1,0 +1,12 @@
+[
+    {
+        "name" : "Kobe",
+        "team" : "Lakers",
+        "PPG"  : 40
+    },
+    {
+        "name" : "Steph Curry",
+        "team" : "Warriors",
+        "PPG"  : 32
+    }
+]

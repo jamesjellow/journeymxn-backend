@@ -1,0 +1,26 @@
+{
+  "name": "journeymxn-backend",
+  "version": "1.0.0",
+  "description": "Journeymxn API ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesjellow/journeymxn-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesjellow/journeymxn-backend/issues"
+  },
+  "homepage": "https://github.com/jamesjellow/journeymxn-backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "12.16.1"
+  }
+}
