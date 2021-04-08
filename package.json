@@ -5,12 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
     "start": "node app.js"
-=======
-    "start": "node index.js",
-    "dev": "npx nodemon index.js"
->>>>>>> upstream/master
   },
   "repository": {
     "type": "git",
@@ -23,7 +18,6 @@
   },
   "homepage": "https://github.com/jamesjellow/journeymxn-backend#readme",
   "dependencies": {
-<<<<<<< HEAD
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -36,11 +30,6 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "validator": "^13.5.2"
-=======
-    "express": "^4.17.1",
-    "mongodb": "^3.6.5",
-    "mongoose": "^5.12.3"
->>>>>>> upstream/master
   },
   "engines": {
     "node": "12.16.1"

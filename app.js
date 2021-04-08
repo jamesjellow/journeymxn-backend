@@ -1,3 +1,4 @@
+// $ npm i bcryptjs body-parser cors fs jsonwebtoken method-override mongoose passport passport-jwt passport-local validator --save
 const express = require("express");
 var mongoose = require("mongoose");
 const methodOveride = require("method-override");
@@ -7,7 +8,7 @@ const keys = require("./config/keys");
 const passport = require("passport");
 const cors = require("cors");
 const fs = require('fs');
-const mlab_db = "mongodb+srv://<username>:<password>@cluster0.ksqzk.mongodb.net/journeymxn?retryWrites=true&w=majority"
+const mlab_db = "mongodb+srv://Mugdhaa-P:trN41Dhy46GLAiAH@cluster0.ksqzk.mongodb.net/journeymxn?retryWrites=true&w=majority"
 const LocalStrategy = require('passport-local').Strategy;
 
 mongoose
@@ -19,7 +20,7 @@ mongoose
 //Load db_schema
 // const QuestionResponse = require("./db_schema/question_response");
 // const Student = require("./db_schema/student");
-const Admin = require("./db_schema/admin")
+const Admin = require("./models/admin")
 
 //Load Login Validation
 const validateLoginInput = require("./validation/login");
@@ -87,12 +88,7 @@ app.get("/admin",(req, res) => {
     // Confirm current session for the user using "expressSession"
 });
 
-<<<<<<< HEAD
 app.listen(3000, function() {
   console.log("Listening on Port 3000.")
 })
-=======
-//API Methods:
-//app.post()
-//app.get() . . .
->>>>>>> upstream/master
+
