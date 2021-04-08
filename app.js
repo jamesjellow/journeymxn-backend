@@ -87,6 +87,12 @@ app.get("/admin",(req, res) => {
     // Confirm current session for the user using "expressSession"
 });
 
+<<<<<<< HEAD
 app.listen(3000, function() {
   console.log("Listening on Port 3000.")
 })
+=======
+//API Methods:
+//app.post()
+//app.get() . . .
+>>>>>>> upstream/master
