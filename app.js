@@ -7,10 +7,12 @@ const jwt = require("jsonwebtoken");
 const keys = require("./config/keys");
 const passport = require("passport");
 const cors = require("cors");
-const mlab_db = "" // <-- insert mongoDB cluster key here
+const fs = require('fs');
+const mlab_db = "mongodb+srv://Mugdhaa-P:trN41Dhy46GLAiAH@cluster0.ksqzk.mongodb.net/journeymxn?retryWrites=true&w=majority" 
+const LocalStrategy = require('passport-local').Strategy;
 
 mongoose
-  .connect(mlab_db)
+  .connect(mlab_db, {useNewUrlParser:true, useUnifiedTopology: true})
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
@@ -24,15 +26,27 @@ const Admin = require("./db_schema/admin")
 const validateLoginInput = require("./validation/login");
 
 //Load Express
-const app = express();
+var app = express();
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+
 app.use(methodOveride("_method"));
 //use cors to allow cross origin resource sharing
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 app.use(passport.initialize());
+
+passport.use(new LocalStrategy(function(email, password, done) {
+  Admin.findOne({email: email}, (err, admin) =>{
+    console.log(email, ' tried to log in');
+    
+    if(err) return done(err);
+    if(!user) return done(null, false);
+    if(!password) return done(null, false);
+    return done(null, admin)
+  });
+}));
 
 //Passport config
 require("./config/passport")(passport);
@@ -52,69 +66,30 @@ app.use(function(req, res, next) {
 });
 
 
-app.get(
-  "/admin",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    console.log(res.body);
-    const errors = {};
+app.get('/', function (req, res) {
+  res.send('Hello World! GET request to the homepage')
+})
 
-    Admin.findOne({ user: req.user.id })
-      .then(admin_profile => {
-        if (!admin_profile) {
-          errors.noprofile = "There is no profile for this admin. Access denied.";
-          return res.status(404).json(errors);
-        }
-        res.json(admin_profile);
-      })
-      .catch(err => res.status(404).json(err));
-    
-      res.redirect("/login")
+app.post('/', function (req, res) {
+  res.send('Hello World! POST request to the homepage')
+})
+
+app.get("/login",(req, res) => {
+    res.send("Successfully redirected to the Login Page : via failureRedirect");
   }
 );
 
-
-app.post("/login", (req, res) => {
-  const { errors, isValid } = validateLoginInput(req.body);
-  console.log(res.body);
-  // Check Validation
-  if (!isValid) {
-    return res.status(400).json(errors);
-  }
-
-  const email = req.body.email;
-  const password = req.body.password;
-
-  // Find user by email
-  Admin.findOne({ email }).then(user => {
-    // Check for user
-    if (!user) {
-      errors.email = "User not found";
-      return res.status(404).json(errors);
-    }
-
-    // Check Password
-    bcrypt.compare(password, user.password).then(isMatch => {
-      if (isMatch) {
-        // User Matched
-        // Create JWT Payload
-        const payload = { id: user.id, name: user.name }; 
-        // Sign Token
-        jwt.sign(
-          payload,
-          keys.secretOrKey,
-          { expiresIn: 300 },
-          (err, token) => {
-            res.json({
-              success: true,
-              token: "Bearer " + token
-            });
-          }
-        );
-      } else {
-        errors.password = "Password incorrect";
-        return res.status(400).json(errors);
-      }
-    });
-  });
+app.post("/login", passport.authenticate('local', 
+  { successRedirect: '/admin', failureRedirect: '/login' }),
+  (req, res) => {
+  res.send("Login successful!!");
 });
+
+//PRIVATE ROUTE
+app.get("/admin",(req, res) => {
+    res.send( "Admin Page: Authorized Access Only");
+});
+
+app.listen(3000, function() {
+  console.log("Listening on Port 3000.")
+})
