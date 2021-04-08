@@ -1,6 +1,5 @@
 const express = require("express");
 var mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const methodOveride = require("method-override");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
@@ -8,7 +7,7 @@ const keys = require("./config/keys");
 const passport = require("passport");
 const cors = require("cors");
 const fs = require('fs');
-const mlab_db = "mongodb+srv://Mugdhaa-P:trN41Dhy46GLAiAH@cluster0.ksqzk.mongodb.net/journeymxn?retryWrites=true&w=majority" 
+const mlab_db = "mongodb+srv://<username>:<password>@cluster0.ksqzk.mongodb.net/journeymxn?retryWrites=true&w=majority"
 const LocalStrategy = require('passport-local').Strategy;
 
 mongoose
@@ -28,21 +27,18 @@ const validateLoginInput = require("./validation/login");
 //Load Express
 var app = express();
 app.set("view engine", "ejs");
-// app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
-
 app.use(methodOveride("_method"));
 //use cors to allow cross origin resource sharing
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 app.use(passport.initialize());
-
 passport.use(new LocalStrategy(function(email, password, done) {
   Admin.findOne({email: email}, (err, admin) =>{
     console.log(email, ' tried to log in');
     
     if(err) return done(err);
-    if(!user) return done(null, false);
+    if(!admin) return done(null, false);
     if(!password) return done(null, false);
     return done(null, admin)
   });
@@ -75,7 +71,7 @@ app.post('/', function (req, res) {
 })
 
 app.get("/login",(req, res) => {
-    res.send("Successfully redirected to the Login Page : via failureRedirect");
+    res.send("Login Page: Redirection successful!");
   }
 );
 
@@ -88,6 +84,7 @@ app.post("/login", passport.authenticate('local',
 //PRIVATE ROUTE
 app.get("/admin",(req, res) => {
     res.send( "Admin Page: Authorized Access Only");
+    // Confirm current session for the user using "expressSession"
 });
 
 app.listen(3000, function() {
