@@ -1,4 +1,5 @@
 // $ npm i bcryptjs body-parser cors fs jsonwebtoken method-override mongoose passport passport-jwt passport-local validator --save
+// npm run dev
 const express = require("express");
 var mongoose = require("mongoose");
 const methodOveride = require("method-override");
@@ -8,11 +9,13 @@ const methodOveride = require("method-override");
 const passport = require("passport");
 const cors = require("cors");
 //const fs = require('fs');
-const mlab_db = ""
+db_name = 'submissions';
+user_name = 'jamesjellow'
+const uri = `mongodb+srv://${user_name}:${process.env.ATLAS_PASSWORD}@cluster0.ksqzk.mongodb.net/${db_name}?retryWrites=true&w=majority`;
 const LocalStrategy = require('passport-local').Strategy;
 
 mongoose
-  .connect(mlab_db, {useNewUrlParser:true, useUnifiedTopology: true})
+  .connect(uri, {useNewUrlParser:true, useUnifiedTopology: true})
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
