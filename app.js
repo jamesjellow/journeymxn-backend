@@ -2,12 +2,12 @@
 const express = require("express");
 var mongoose = require("mongoose");
 const methodOveride = require("method-override");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const keys = require("./config/keys");
+//const bcrypt = require("bcryptjs");
+//const jwt = require("jsonwebtoken");
+//const keys = require("./config/keys");
 const passport = require("passport");
 const cors = require("cors");
-const fs = require('fs');
+//const fs = require('fs');
 const mlab_db = "mongodb+srv://Mugdhaa-P:trN41Dhy46GLAiAH@cluster0.ksqzk.mongodb.net/journeymxn?retryWrites=true&w=majority"
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -18,12 +18,7 @@ mongoose
 
 
 //Load db_schema
-// const QuestionResponse = require("./db_schema/question_response");
-// const Student = require("./db_schema/student");
 const Admin = require("./models/admin")
-
-//Load Login Validation
-const validateLoginInput = require("./validation/login");
 
 //Load Express
 var app = express();
@@ -45,9 +40,6 @@ passport.use(new LocalStrategy(function(email, password, done) {
   });
 }));
 
-//Passport config
-require("./config/passport")(passport);
-
 app.use(function(req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -65,21 +57,23 @@ app.use(function(req, res, next) {
 
 app.get('/', function (req, res) {
   res.send('Hello World! GET request to the homepage')
-})
+  console.log(res.statusCode)
+});
 
 app.post('/', function (req, res) {
   res.send('Hello World! POST request to the homepage')
-})
+});
 
-app.get("/login",(req, res) => {
+app.get("/login", (req, res) => {
     res.send("Login Page: Redirection successful!");
-  }
-);
+});
 
+//Check if successful response header is updated
+//See if the failure redirect response code is changed
 app.post("/login", passport.authenticate('local', 
-  { successRedirect: '/admin', failureRedirect: '/login' }),
-  (req, res) => {
-  res.send("Login successful!!");
+  { successRedirect: '/admin', failureRedirect: '/login' }),(req, res) => {
+    res.send("Login Successful!"); 
+    console.log("Status Code: ", res.statusCode)
 });
 
 //PRIVATE ROUTE
