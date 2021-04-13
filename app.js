@@ -8,7 +8,7 @@ const methodOveride = require("method-override");
 const passport = require("passport");
 const cors = require("cors");
 //const fs = require('fs');
-const mlab_db = "mongodb+srv://Mugdhaa-P:trN41Dhy46GLAiAH@cluster0.ksqzk.mongodb.net/journeymxn?retryWrites=true&w=majority"
+const mlab_db = ""
 const LocalStrategy = require('passport-local').Strategy;
 
 mongoose
