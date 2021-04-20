@@ -1,13 +1,8 @@
 const { ObjectId } = require('bson');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-/*
-{ Finance
-  Frugality
-  1
-}
-*/
-const QuestionResponse = new Schema({
+
+const QuestionResponseSchema = new Schema({
   industry: {
     type: String,
     required: true
@@ -22,10 +17,10 @@ const QuestionResponse = new Schema({
     required: true
   },
   submission_id: {
-    type: ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "FormResponse"
   }
   
 }, { collection: 'question_response' });
 
-module.exports = mongoose.model('QuestionResponse', QuestionResponse);
+module.exports = mongoose.model('QuestionResponseSchema', QuestionResponseSchema);

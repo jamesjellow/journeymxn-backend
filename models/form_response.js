@@ -3,16 +3,21 @@ const Schema = mongoose.Schema;
 
 const FormResponse = new Schema({
 
+    user: { 
+      type: Schema.Types.ObjectId, 
+      required : false, 
+      ref: 'UserSchema'
+    },
+    zip_code : Number,
+    school: String,
+    reccomendation: String,
     dateSubmitted : {
       type: Date, 
       required: true,
       default: Date.now()
     },
-  
-    user: { type: String, required: true},
-
     // 1 : M
-    response_ids: [{ type: Schema.Types.ObjectId, ref: 'QuestionResponse' }]
+    responses: [{ type: Schema.Types.ObjectId, ref: 'QuestionResponse' }]
   },
   { collection: 'form_response' }
   );
