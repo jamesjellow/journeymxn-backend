@@ -6,8 +6,8 @@ const methodOveride = require("method-override");
 const passport = require("passport");
 const cors = require("cors");
 db_name = 'users';
-user_name = 'Mugdhaa-P'
-const uri = `mongodb+srv://${user_name}:trN41Dhy46GLAiAH@cluster0.ksqzk.mongodb.net/${db_name}?retryWrites=true&w=majority`;
+user_name = 'jamesjellow'
+const uri = `mongodb+srv://${user_name}:${process.env.ATLAS_PASSWORD}@cluster0.ksqzk.mongodb.net/${db_name}?retryWrites=true&w=majority`;
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 
