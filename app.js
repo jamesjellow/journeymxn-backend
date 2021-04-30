@@ -5,19 +5,20 @@ var mongoose = require("mongoose");
 const methodOveride = require("method-override");
 const passport = require("passport");
 const cors = require("cors");
-db_name = 'users';
-user_name = 'jamesjellow'
-const uri = `mongodb+srv://${user_name}:${process.env.ATLAS_PASSWORD}@cluster0.ksqzk.mongodb.net/${db_name}?retryWrites=true&w=majority`;
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 
-mongoose
+//Database connection
+db_name = 'users';
+user_name = 'jamesjellow'
+const uri = `mongodb+srv://${user_name}:${process.env.ATLAS_PASSWORD}@cluster0.ksqzk.mongodb.net/${db_name}?retryWrites=true&w=majority`;mongoose
   .connect(uri, {useNewUrlParser:true, useUnifiedTopology: true})
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-//Load db_schema
+//Load Schemas
 const UserSchema = require("./models/user")
+const AdminSchema = require("./models/admin")
 
 //Load Express
 var app = express();
@@ -43,20 +44,35 @@ passport.use(new LocalStrategy({
                               }, 
             function(email, password, done) {
               UserSchema.findOne({email: email}, (err, user) =>{
-                console.log(email, ' tried to log in!');
-                //console.log(user);
-                if(err) 
-                    return err;
-                if(!user) 
-                    { console.log("Error: User does not exist.")
-                      return done(null, false);} 
-                if(user.password != password) 
-                    { console.log("Error: Incorrect password.")
-                      return done(null, false); }
-              
-                console.log("User ", email, "found. Login Successful!");
-                return done(null, user);
-            });
+                    console.log(email, ' tried to log in!');
+                    //console.log(user);
+                    if(err) 
+                        return err;
+                    if(!user) 
+                        { console.log("Error: User does not exist.")
+                          return done(null, false);} 
+                    //console.log("User found in 'user' collection. ");
+                    AdminSchema.findOne({_id: user._id}).then((data) => {
+                        if (data !== null) { 
+                            //user._id also exists in the 'admin' collection 
+                            console.log("Successfully verified that User also exists in 'admin' collection.");
+
+                            if (user.password != password) 
+                            {
+                                console.log("Error: Incorrect password.")
+                                return done(null, false); 
+                            }
+
+                            //Else, login successful!
+                            console.log("User ", email, "found. Login Successful!");
+                            return done(null, user);
+
+                        } else {
+                            console.log("Unauthorized. USER Does NOT exist in 'admin' collection!!");
+                            return done(null, false)
+                        }
+                })   
+             });
 }));
 
 app.use(function(req, res, next) {
@@ -80,4 +96,3 @@ app.use("/createUser", require("./routes/create-user"));
 app.listen(3000, function() {
   console.log("Listening on Port 3000.")
 })
-

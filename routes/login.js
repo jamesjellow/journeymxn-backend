@@ -18,13 +18,11 @@ passport.deserializeUser(function(id, done) {
 
 router.get("/", (req, res) => {
     res.send("Login Page: Redirection successful!");
-    console.log("/GET request (login-page) | Status: " + res.statusCode)
 });
 
 router.post("/", 
     passport.authenticate('local', {failureRedirect: '/login' }),
     function(req, res) {
-    //console.log(req.user);
     //Login Successful!
     res.redirect("/admin");
 });
