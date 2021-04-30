@@ -3,44 +3,76 @@
 const express = require("express");
 var mongoose = require("mongoose");
 const methodOveride = require("method-override");
-//const bcrypt = require("bcryptjs");
-//const jwt = require("jsonwebtoken");
-//const keys = require("./config/keys");
 const passport = require("passport");
 const cors = require("cors");
-//const fs = require('fs');
-db_name = 'submissions';
-user_name = 'jamesjellow'
-const uri = `mongodb+srv://${user_name}:${process.env.ATLAS_PASSWORD}@cluster0.ksqzk.mongodb.net/${db_name}?retryWrites=true&w=majority`;
 const LocalStrategy = require('passport-local').Strategy;
+const session = require('express-session');
 
-mongoose
+//Database connection
+db_name = 'users';
+user_name = 'jamesjellow'
+const uri = `mongodb+srv://${user_name}:${process.env.ATLAS_PASSWORD}@cluster0.ksqzk.mongodb.net/${db_name}?retryWrites=true&w=majority`;mongoose
   .connect(uri, {useNewUrlParser:true, useUnifiedTopology: true})
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-
-//Load db_schema
-const Admin = require("./models/admin")
+//Load Schemas
+const UserSchema = require("./models/user")
+const AdminSchema = require("./models/admin")
 
 //Load Express
 var app = express();
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(methodOveride("_method"));
-//use cors to allow cross origin resource sharing
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(express.json());
+
+app.use(session({
+  secret: 'veryimportantsecret',
+  resave: true,
+  saveUninitialized:true,
+  cookie: {maxAge:300000} //5 minutes 
+}));
 
 app.use(passport.initialize());
-passport.use(new LocalStrategy(function(email, password, done) {
-  Admin.findOne({email: email}, (err, admin) =>{
-    console.log(email, ' tried to log in');
-    
-    if(err) return done(err);
-    if(!admin) return done(null, false);
-    if(!password) return done(null, false);
-    return done(null, admin)
-  });
+app.use(passport.session());
+
+passport.use(new LocalStrategy({
+                                usernameField: 'email',
+                                    passwordField: 'password'
+                              }, 
+            function(email, password, done) {
+              UserSchema.findOne({email: email}, (err, user) =>{
+                    console.log(email, ' tried to log in!');
+                    //console.log(user);
+                    if(err) 
+                        return err;
+                    if(!user) 
+                        { console.log("Error: User does not exist.")
+                          return done(null, false);} 
+                    //console.log("User found in 'user' collection. ");
+                    AdminSchema.findOne({_id: user._id}).then((data) => {
+                        if (data !== null) { 
+                            //user._id also exists in the 'admin' collection 
+                            console.log("Successfully verified that User also exists in 'admin' collection.");
+
+                            if (user.password != password) 
+                            {
+                                console.log("Error: Incorrect password.")
+                                return done(null, false); 
+                            }
+
+                            //Else, login successful!
+                            console.log("User ", email, "found. Login Successful!");
+                            return done(null, user);
+
+                        } else {
+                            console.log("Unauthorized. USER Does NOT exist in 'admin' collection!!");
+                            return done(null, false)
+                        }
+                })   
+             });
 }));
 
 app.use(function(req, res, next) {
@@ -57,35 +89,10 @@ app.use(function(req, res, next) {
   next();
 });
 
-
-app.get('/', function (req, res) {
-  res.send('Hello World! GET request to the homepage')
-  console.log(res.statusCode)
-});
-
-app.post('/', function (req, res) {
-  res.send('Hello World! POST request to the homepage')
-});
-
-app.get("/login", (req, res) => {
-    res.send("Login Page: Redirection successful!");
-});
-
-//Check if successful response header is updated
-//See if the failure redirect response code is changed
-app.post("/login", passport.authenticate('local', 
-  { successRedirect: '/admin', failureRedirect: '/login' }),(req, res) => {
-    res.send("Login Successful!"); 
-    console.log("Status Code: ", res.statusCode)
-});
-
-//PRIVATE ROUTE
-app.get("/admin",(req, res) => {
-    res.send( "Admin Page: Authorized Access Only");
-    // Confirm current session for the user using "expressSession"
-});
-
+app.use("/", require("./routes/home-page"));
+app.use("/login", require("./routes/login"));
+app.use("/admin", require("./routes/admin"));
+app.use("/createUser", require("./routes/create-user"));
 app.listen(3000, function() {
   console.log("Listening on Port 3000.")
 })
-
