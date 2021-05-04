@@ -9,8 +9,8 @@ const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 
 
-const port = process.env.port || 5000;
-const url = process.env.prod_url + `:${port}` || "http://localhost:5000" 
+// const port = process.env.port || 5000;
+const url = process.env.prod_url || "http://localhost:5000" 
 //Database connection
 const uri = process.env.URI;
 mongoose
@@ -96,6 +96,3 @@ app.use("/", require("./routes/home-page"));
 app.use("/login", require("./routes/login"));
 app.use("/admin", require("./routes/admin"));
 app.use("/submitForm", require("./routes/submitForm"));
-app.listen(port, function() {
-  console.log(`Listening on Port ${port}.`);
-})
