@@ -1,3 +1,6 @@
+// /routes/submitForm.js 
+// Creates and Submits a form to the MongoDB Database
+
 const express = require('express');
 const router = express.Router();
 

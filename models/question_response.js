@@ -7,6 +7,10 @@ const QuestionResponseSchema = new Schema({
     type: String,
     required: true
   },
+  // subindustry: {
+  //   type: String,
+  //   required: false
+  // },
   skill: {
     type: String,
     required: true
