@@ -9,7 +9,7 @@ const session = require('express-session');
 const PORT = process.env.PORT || 3000;
 const url = process.env.prod_url || "http://localhost:5000" 
 
-//Load Express
+// Load Express
 var app = express();
 app.set("view engine", "ejs");
 app.use(express.json());
@@ -23,6 +23,10 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// Connect to MongoDB via Mongoose asynchronously
+const { mongooseConnect } = require('./helpers/mongo.js');
+mongooseConnect();
 
 // Load Local Strategy
 Local_Strategy = require('./helpers/local_strategy');
