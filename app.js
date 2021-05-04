@@ -44,7 +44,9 @@ app.use( (req, res, next) => {
 });
 
 // Routers
-app.use("/", require("./routes/home-page"));
+app.get('/', (req, res) =>
+  res.send('Hello World')
+);
 app.use("/login", require("./routes/login"));
 app.use("/admin", require("./routes/admin"));
 app.use("/submitForm", require("./routes/submitForm"));
