@@ -9,7 +9,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 
 const url = process.env.prod_url || "http://localhost:3000" 
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 
 //Database connection
 const uri = process.env.URI;
@@ -96,6 +96,3 @@ app.use("/", require("./routes/home-page"));
 app.use("/login", require("./routes/login"));
 app.use("/admin", require("./routes/admin"));
 app.use("/submitForm", require("./routes/submitForm"));
-app.listen(port, function() {
-  console.log(`Listening on Port ${port}.`);
-})
