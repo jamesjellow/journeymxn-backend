@@ -101,5 +101,5 @@ app.use("/admin", require("./routes/admin"));
 app.use("/submitForm", require("./routes/submitForm"));
 
 app.listen(PORT, function() {
-  console.log(`Listening on Port ${port}.`);
+  console.log(`Listening on Port ${PORT}.`);
 })
