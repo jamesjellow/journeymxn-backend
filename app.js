@@ -8,10 +8,12 @@ const cors = require("cors");
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 
+const url = process.env.prod_url || "http://localhost:3000" 
 //Database connection
 db_name = 'users';
 user_name = 'jamesjellow'
-const uri = `mongodb+srv://${user_name}:${process.env.ATLAS_PASSWORD}@cluster0.ksqzk.mongodb.net/${db_name}?retryWrites=true&w=majority`;mongoose
+const uri = `mongodb+srv://${user_name}:${process.env.ATLAS_PASSWORD}@cluster0.ksqzk.mongodb.net/${db_name}?retryWrites=true&w=majority`;
+mongoose
   .connect(uri, {useNewUrlParser:true, useUnifiedTopology: true})
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
@@ -25,7 +27,7 @@ var app = express();
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(methodOveride("_method"));
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: url, credentials: true }));
 app.use(express.json());
 
 app.use(session({
@@ -38,6 +40,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// How did passport pull data from the json from post in /login ?
 passport.use(new LocalStrategy({
                                 usernameField: 'email',
                                     passwordField: 'password'
@@ -76,7 +79,7 @@ passport.use(new LocalStrategy({
 }));
 
 app.use(function(req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Origin", url);
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader(
     "Access-Control-Allow-Methods",
@@ -92,7 +95,7 @@ app.use(function(req, res, next) {
 app.use("/", require("./routes/home-page"));
 app.use("/login", require("./routes/login"));
 app.use("/admin", require("./routes/admin"));
-app.use("/createUser", require("./routes/create-user"));
+app.use("/submitForm", require("./routes/submitForm"));
 app.listen(3000, function() {
   console.log("Listening on Port 3000.")
 })

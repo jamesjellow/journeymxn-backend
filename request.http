@@ -3,12 +3,18 @@
 @host = {{hostname}}:{{port}}
 @contentType = application/json
 
-POST http://{{host}}/login/ HTTP/1.1
+# POST http://{{host}}/login/ HTTP/1.1
+# Content-Type: {{contentType}}
+
+# {
+#     "name": "Michael",
+#     "email": "newAdminTEST@journeymxn.com",
+#     "age": 23,
+#     "password": "ABC9999"
+# }
+POST http://{{host}}/submitForm/ HTTP/1.1
 Content-Type: {{contentType}}
 
 {
-    "name": "Michael",
-    "email": "michael@michael.com",
-    "age": 23,
-    "password": "1234567"
+    
 }
