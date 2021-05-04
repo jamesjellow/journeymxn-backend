@@ -9,10 +9,10 @@ const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 
 const url = process.env.prod_url || "http://localhost:3000" 
+const port = process.env.port || 3000;
+
 //Database connection
-db_name = 'users';
-user_name = 'jamesjellow'
-const uri = `mongodb+srv://${user_name}:${process.env.ATLAS_PASSWORD}@cluster0.ksqzk.mongodb.net/${db_name}?retryWrites=true&w=majority`;
+const uri = process.env.URI;
 mongoose
   .connect(uri, {useNewUrlParser:true, useUnifiedTopology: true})
   .then(() => console.log("MongoDB Connected"))
@@ -96,6 +96,6 @@ app.use("/", require("./routes/home-page"));
 app.use("/login", require("./routes/login"));
 app.use("/admin", require("./routes/admin"));
 app.use("/submitForm", require("./routes/submitForm"));
-app.listen(3000, function() {
-  console.log("Listening on Port 3000.")
+app.listen(port, function() {
+  console.log(`Listening on Port ${port}.`);
 })
