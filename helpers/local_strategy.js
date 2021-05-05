@@ -3,6 +3,7 @@
 const UserSchema = require("../models/user")
 const AdminSchema = require("../models/admin")
 const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcryptjs');
 
 const strategy = 
     new LocalStrategy({
@@ -27,16 +28,18 @@ const strategy =
             }).then((data) => {
                 if (data !== null) {
                     //user._id also exists in the 'admin' collection 
-                    console.log("Successfully verified that User also exists in 'admin' collection.");
-
-                    if (user.password != password) {
-                        console.log("Error: Incorrect password.")
-                        return done(null, false);
-                    }
-
-                    //Else, login successful!
-                    console.log("User ", email, "found. Login Successful!");
-                    return done(null, user);
+                    bcrypt.compare(password, user.password, function(err, res) {
+                        if (err) {throw err;}
+                        if (res == false){
+                            console.log("Error: Incorrect password.")
+                            return done(null, false);
+                        }
+                        else{
+                              //Passwords match! Login successful!
+                            console.log("User ", email, "found. Login Successful!");
+                            return done(null, user);
+                        }
+                    });
 
                 } else {
                     console.log("Unauthorized. USER Does NOT exist in 'admin' collection!!");

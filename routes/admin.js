@@ -26,8 +26,6 @@ function ensureAuthenticated(req, res, next) {
 };
    
 router.get("/",ensureAuthenticated, (req, res) => {
-    //console.log(req.session);
-    //console.log(req.user); 
     console.log("Request re-authenticated in GET method for /admin. Login Successful!")
     return res.send('Access Granted! Welcome to Admin Page!');
 });
