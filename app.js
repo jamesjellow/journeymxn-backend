@@ -55,6 +55,7 @@ app.use("/login", require("./routes/login"));
 app.use("/admin", require("./routes/admin"));
 app.use("/submitForm", require("./routes/submitForm"));
 app.use("/createUser", require("./routes/create-user"));
+app.use("/logout", require("./routes/logout"));
 
 app.listen(PORT, function() {
   console.log(`Listening on Port ${PORT}.`);

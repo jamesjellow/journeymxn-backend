@@ -15,7 +15,7 @@ function ensureAuthenticated(req, res, next) {
             if (data !== null) {
                 next()
             } else {
-                console.log("Unauthorized request. Redirecting to /login");
+                console.log("Admin not found. Redirecting to /login");
                 res.redirect('/login')
             }
         })
