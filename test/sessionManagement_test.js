@@ -20,6 +20,7 @@ describe('Login Test : Invalid Credentials', function() {
                 password: 'dummy_password'
             })
             .expect(401)
+            .expect('Location', '/login')
             .end(function(err, res){
                 should(err).equal;(null);
             });
@@ -32,6 +33,7 @@ describe('Login Test : Invalid Credentials', function() {
                 password: ""
             })
             .expect(401)
+            .expect('Location', '/login')
             .end(function(err, res){
                 should(err).equal;(null);
             });
@@ -44,6 +46,7 @@ describe('Login Test : Invalid Credentials', function() {
                 password: "   "
             })
             .expect(401)
+            .expect('Location', '/login')
             .end(function(err, res){
                 should(err).equal;(null);
             });
@@ -59,6 +62,7 @@ describe('Login Test : Incorrect Credentials', function() {
                 password: 'dummy_password'
             })
             .expect(401)
+            .expect('Location', '/login')
             .end(function(err, res){
                 should(err).equal;(null);
             });
@@ -71,6 +75,7 @@ describe('Login Test : Incorrect Credentials', function() {
                 password: "chf53!hj"
             })
             .expect(401)
+            .expect('Location', '/login')
             .end(function(err, res){
                 should(err).equal;(null);
             });
@@ -79,13 +84,14 @@ describe('Login Test : Incorrect Credentials', function() {
 
 //TEST 3
 describe('Login Test : Correct Credentials', function() {
-    it('User IS an Admin : Redirects to /admin with statusCode 200', function() {
+    it('User IS an Admin : Directs to /admin with statusCode 200', function() {
         request.post('/login')
             .send({
                 email: "newAdminTEST2@journeymxn.com",
                 password: '222QWERTY'
             })
             .expect(200)
+            .expect('Location', '/admin')
             .end(function(err, res){
                 should(err).equal;(null);
             });
@@ -93,14 +99,15 @@ describe('Login Test : Correct Credentials', function() {
 });
 
 //TEST 4
-describe('GET /admin TEST : Testing session management', function() {
-    it('Admin Credentials are valid, but Admin NOT logged in : Redirects to /login with statusCode 401', function() {
+describe('GET /admin : Admin NOT logged in', function() {
+    it('Redirects to /login with statusCode 401', function() {
         request.get('/admin')
             .send({
                 email: "newAdminTEST2@journeymxn.com",
                 password: '222QWERTY'
             })
             .expect(401)
+            .expect('Location', '/login')
             .end(function(err, res){
                 should(err).equal;(null);
             });
@@ -108,7 +115,7 @@ describe('GET /admin TEST : Testing session management', function() {
 });
 
 //TEST 5
-describe('GET /admin TEST : Testing session management', function() {
+describe('GET /admin : Admin IS logged in', function() {
     var authenticatedSession;
     before(function(done){
         request.post('/login')
@@ -123,8 +130,51 @@ describe('GET /admin TEST : Testing session management', function() {
             });
     });
     
-    it('Admin Credentials are valid, and  Admin IS logged in : Renders /admin with statusCode 200', function() {
+    it('Directs to /admin with statusCode 200', function() {
         authenticatedSession.get('/admin')
-            .expect(200);
+            .expect(200)
+            .expect('Location', '/admin');
+    });
+});
+
+//TEST 6
+describe('GET /admin : After login() and logout()', function() {
+    var authenticatedSession;
+    before(function(done){
+        request.post('/login')
+            .send({
+                email: "newAdminTEST2@journeymxn.com",
+                password: '222QWERTY'
+            })
+            .end(function(err, res){
+                if (err) throw err;
+                authenticatedSession = testSession;
+                return done();
+            });
+    });
+    
+    it('After Admin login : Directs to /admin with statusCode 200', function() {
+        authenticatedSession.get('/admin')
+            .expect(200)
+            .expect('Location', '/admin')
+    });
+
+    before(function(done){
+        request.post('/logout')
+            .send({
+                email: "newAdminTEST2@journeymxn.com",
+                password: '222QWERTY'
+            })
+            .end(function(err, res){
+                if (err) throw err;
+                authenticatedSession = testSession;
+                return done();
+            });
+    });
+
+    it('After Admin logout : Directs to /login with statusCode 401', function() {
+        authenticatedSession.get('/admin')
+            .expect(401)
+            .expect('Location', '/login');
     });
 });
