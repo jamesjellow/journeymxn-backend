@@ -1,0 +1,454 @@
+[
+    {
+        "career": "Finance Industry",
+        "skill": "Frugality",
+        "question": "How would you feel if you are working on something and did not have enough resources? (Time, money, manpower, etc. )",
+        "answers": {
+            "high": "Existence of constraints drives me to be innovative, efficient and successful.",
+            "medium": "Constraints on resources are not a huge problem for me. That being said, I also agree to the fact that the more resources, the better!",
+            "low": "I feel like my work and success would be hampered if sufficient resources are not available for use. I’d definitely choose to wait until I have all the necessary resources to be able to be innovative, efficient and successful."
+        }
+    },
+    {
+        "career": "Finance Industry",
+        "skill": "Market and Trend Analysis",
+        "question": "How comfortable are you with working with data, charts and graphs?",
+        "answers": {
+            "high": "Whenever I see data (raw and/or summarized), the thought of exploring what the data means, visualizing trends and analysing them almost always crosses my mind. I like the feeling of being able to make meaningful conclusions after careful calculations and analysis.",
+            "medium": "Whenever I see data (raw and/or summarized), I tend to scratch the surface to see if I notice any trends. If I have to, I’m also comfortable looking at the data more closely to analyze it further.",
+            "low": "Whenever I see data (raw and/or summarized), the spreadsheets do not intrigue me. I feel just okay not diving any deeper to understand trends or changes."
+        }
+    },
+    {
+        "career": "Finance Industry",
+        "skill": "Coordination and Team Management",
+        "question": "In a situation where a surprise party has to be planned for one of your best friends:",
+        "answers": {
+            "high": "I like to be the person who actively takes initiative in coordinating everyone’s schedules, making venue/food arrangements and the guest list, and planning gifts for the occasion.",
+            "medium": "I like to be the person who is in-charge of smaller responsibilities, and can make sure that the task I undertake is successfully executed.",
+            "low": "I don’t really like planning and being in-charge of such social gatherings. However, I’ll be happy to attend the party and contribute my dues towards the gift."
+        }
+    },
+    {
+        "career": "Finance Industry",
+        "skill": "Persuasion and Negotiation Skills",
+        "question": "You are splitting the cost with your partner to buy a gift to buy for your best friend. Your partner does not agree to the budget that you have set for this person's gift and refuses to budge. Choose one of the options that best describe your response:",
+        "answers": {
+            "high": "I’ll explain to my partner how much this gift means and try to convince them to spend more anyway.",
+            "medium": "I’ll convince my partner, and meet in the middle by lowering my budget for the gift. ",
+            "low": "I’ll lower my price point since my partner won’t budge on my budget."
+        }
+    },
+    {
+        "career": "Finance Industry",
+        "skill": "Public Speaking and Presentation",
+        "question": "You are in a room full of people, and you are welcome to talk about something you are most passionate about for 30-60 seconds. How confident would you feel doing this?",
+        "answers": {
+            "high": "I’ll feel like myself, and I won’t shy away if I have to talk in a room full of people. I’ll go up there and speak my heart out -- no questions asked!",
+            "medium": "I’ll be nervous for sure, but I’ll be able to muster up the courage to present my speech in that room full of people.",
+            "low": "I’ll feel terrified at the thought of speaking in front of a room full of people. I’ll try going up there, but there is also a chance that I take a soft pass at that speech."
+        }
+    },
+    {
+        "career": "Creative/Media Industry",
+        "skill": "Creativity",
+        "question": "Your art teacher has decided to let you draw whatever you want for your final project, and you have ample time to work on your project. What do you decide to draw?",
+        "answers": {
+            "high": "I'll attempt to draw something I've never drawn before, even if it takes me more time than usual. I like exploring creative ideas and possibilities.",
+            "medium": "I'll take some inspiration from my previous drawings to get started with the assignment, but will also add some new elements. A little nudge in the right direction helps me start the process.",
+            "low": "I'll draw something I've already seen/known, or have drawn before. I like to be in my comfort zone when it comes to creative projects."
+        }
+    },
+    {
+        "career": "Creative/Media Industry",
+        "skill": "Flexibility",
+        "question": "Plans changed and your friend lets you know at the last minute that they no longer can hang out today. How do you respond?",
+        "answers": {
+            "high": "Calmly let them know that you are disappointed and be flexible by rescheduling around their schedule.",
+            "medium": "Inform them that you are disappointed because this was the only day you could hang out and try to reschedule.",
+            "low": "The sudden change in plans makes you feel anxious and uncomfortable. You end up cancelling the plans to meet at a later time altogether."
+        }
+    },
+    {
+        "career": "Creative/Media Industry",
+        "skill": "Perfectionist / Hardworking",
+        "question": "You finished early on a project that is due in a couple of days. How do you proceed?",
+        "answers": {
+            "high": "Rework some parts and use the remaining time to continue to add on to what you have already.",
+            "medium": "Review and rework some parts and turn it in.",
+            "low": "No need to add any more to the project and turn in what you have."
+        }
+    },
+    {
+        "career": "Creative/Media Industry",
+        "skill": "Imaginative",
+        "question": "You are posed with a problem that you have encountered previously, and you need to come up with a solution this time as well. Which of the following approaches would you choose?",
+        "answers": {
+            "high": "Since I have seen that problem already, I’ll try to think outside the box and find new ways to solve the same problem.",
+            "medium": "Since I have seen that problem already, I’ll take a similar approach just like I did before. But I’ll also try to see if I can improvise the solution in any way.",
+            "low": "Since I have seen that problem already, I’ll stick to the same solution as before."
+        }
+    },
+    {
+        "career": "Creative/Media Industry",
+        "skill": "Musically Inclined",
+        "question": "Do you have a passion for playing or singing music, dancing or composition/choreography?",
+        "answers": {
+            "high": "I absolutely love to sing / play music / dance.",
+            "medium": "I occasionally sing / like to play music / dance.",
+            "low": "I don’t play any instruments and / or I don’t like to sing / dance."
+        }
+    },
+    {
+        "career": "Education/Public Sector",
+        "skill": "Attention Grabbing",
+        "question": "You are a teacher and you are in a class where the kids are being really rowdy today. How do you grab their attention?",
+        "answers": {
+            "high": "Grab their attention by using verbal cues.",
+            "medium": "Start the slideshow and see if they will start paying attention.",
+            "low": "Sit down and wait for them to be quiet."
+        }
+    },
+    {
+        "career": "Education/Public Sector",
+        "skill": "Conflict De-escalation",
+        "question": "You are a discussion leader for a group of younger students. A nasty disagreement breaks out and divides the group in half into a tense situation. How do you proceed?",
+        "answers": {
+            "high": "Find common ground  between both groups and try to bring the two sides to a mutual understanding.",
+            "medium": "Allow people to disagree but remind them to be respectful in their disagreements.",
+            "low": "Let people be entitled to their own opinions."
+        }
+    },
+    {
+        "career": "Education/Public Sector",
+        "skill": "Punctual",
+        "question": "You and your friends have agreed to meet for lunch at 12 noon on a workday. Choose the option that best describes you:",
+        "answers": {
+            "high": "Start heading over 15 minutes early so you can be early for when you meet them..",
+            "medium": "I’ll start heading over with a couple minutes to spare.",
+            "low": "Leave right at 12 noon. They can wait for you."
+        }
+    },
+    {
+        "career": "Education/Public Sector",
+        "skill": "Philanthropy",
+        "question": "You have some spare change and money in your pocket. A hungry classmate asks if you have any money so they can buy some food. What do you do?",
+        "answers": {
+            "high": "Hand over a couple dollar bills.",
+            "medium": "Hand over some coins.",
+            "low": "Sorry. Keep walking and don’t give them any money."
+        }
+    },
+    {
+        "career": "Education/Public Sector",
+        "skill": "Optimism",
+        "question": "You’re having a bad day but don’t want it to show. Somebody accidentally bumps into you and spills some water on your pants. How do you react?",
+        "answers": {
+            "high": "Laugh it off. Accidents happen all the time and they probably did not mean it.",
+            "medium": "Apologize, wipe it up and help clean up the spill.",
+            "low": "Let them know that they are in the wrong for bumping into you."
+        }
+    },
+    {
+        "career": "Healthcare Industry",
+        "skill": "Quick Thinking ",
+        "question": "Quick! Someone has fallen and they can’t get up! What do you do?",
+        "answers": {
+            "high": "Treat them by tending to their wounds or administering CPR while help comes.",
+            "medium": "Call Emergency services.",
+            "low": "I do not want to get involved because I do not know them."
+        }
+    },
+    
+    {
+        "career": "Healthcare Industry",
+        "skill": "Multitasking",
+        "question": "You come home after a tiring day of school only to find out things are in chaos! Your dog ran out the house, your siblings are crying, your parents are asking you to do chores, and you have an assignment due at midnight.",
+        "answers": {
+            "high": "I’ll take a deep breath, set priorities, and get all the tasks done in time.",
+            "medium": "I’ll try to get some of the tasks done, but accept the fact that I won't have enough time to get everything done by midnight",
+            "low": "I’ll panic and feel overwhelmed with the entire situation. I’ll try to get someone to help me to at least get started with the to-do list."
+        }
+    },
+    {
+        "career": "Healthcare Industry",
+        "skill": "Inductive and Deductive Reasoning",
+        "question": "Results from a research study suggest that on average, 60% of the people who sleep early do well on tests, and the other 40% do poorly or mediocre. What can you conclude from this information?",
+        "answers": {
+            "high": "Under normal health conditions, if you sleep early, you will do well on a test.",
+            "medium": "You can neither confirm or deny that someone will do well on a test based on the time they sleep.",
+            "low": "You cannot conclude anything from this study."
+        }
+    },
+    {
+        "career": "Healthcare Industry",
+        "skill": "Biocentrism",
+        "question": "Does learning about the human body interest you?",
+        "answers": {
+            "high": "Biology seems fascinating to me. I like to read and study about the complex structure of the human body, and would like to keep expanding my knowledge about the same.",
+            "medium": "I have a neutral feeling about studying biology -- I’m neither too excited or too indifferent about learning more about the human body.",
+            "low": "I am not fascinated by biology. Besides the basic knowledge, I wouldn’t want to learn any more about the human body."
+        }
+    },
+    {
+        "career": "Healthcare Industry",
+        "skill": "Health enthusiast",
+        "question": "How important to you is a healthy lifestyle?",
+        "answers": {
+            "high": "I like to make sure that my family, friends, loved ones and I lead a healthy lifestyle by eating clean, exercising and getting proper sleep.",
+            "medium": "I try to make sure that my family, friends, loved ones and I lead a healthy lifestyle, but I don’t feel too strongly about it.",
+            "low": "I am indifferent about the idea of a healthy lifestyle."
+        }
+    },
+    {
+        "career": "Technology",
+        "skill": "Pattern Recognition",
+        "question": "If a number is even, halve it; if it is odd, double it and add 1. If a sequence starts at 13, what will be the value of the 3006th term?",
+        "answers": {
+            "high": "I get what the problem is asking me to do, and I would definitely take an effort to recognize the pattern of the given problem. Eventually, I would also work on it to find the 3006th term.",
+            "medium": "I get what the problem is asking me to do and I’ll be willing to attempt it, but I would need a little help to be able to compute the 3006th term.",
+            "low": "I get what the problem is asking me to do, but I am not that interested in solving such problems."
+        }
+    },
+    {
+        "career": "Technology",
+        "skill": "Math",
+        "question": "Consider the following problems:\\n1. Prove that all integers greater than 1 are a product of prime numbers.\\n2. “100 percent of convicted felons consumed bread during their childhood. ”People who consume bread as a child are likely to become felons.” Does the first statement logically imply the second?\\n3. McDonalds sells Chicken McNuggets in boxes of 6, 9, or 20. Obviously one could purchase exactly 15 McNuggets by buying a box of 6 and a box of 9. What is the largest number for which it is impossible to purchase exactly that number of McNuggets?\\n(Reference: http://jwilson.coe.uga.edu/EMAT6680Fa11/McIntyre/6600/algebra/McNuggetProblem.pdf)",
+        "answers": {
+            "high": "I love to solve such problems!",
+            "medium": "I like to solve other Math problems, but these problems don’t feel that exciting.",
+            "low": "I would not like to solve such problems."
+        }
+    },
+    {
+        "career": "Technology",
+        "skill": "Technology Fanatic",
+        "question": "A survey goes out to all the students asking how they feel about technology. How do you answer?",
+        "answers": {
+            "high": "I am the type of person that loves learning and always wants to find out the newest, latest, and greatest technologies.",
+            "medium": "Technology is cool but I’m not that much into it.",
+            "low": "I’m not a big fan of technology. I know some stuff to get by but it doesn’t interest me."
+        }
+    },
+    {
+        "career": "Technology",
+        "skill": "Independent Learner",
+        "question": "Whenever I have to learn a new concept or skill:",
+        "answers": {
+            "high": "I like to do my research on some resources first, and then learn from them independently without much guidance from anyone else.",
+            "medium": "I can do most of the learning myself, but I need a little nudge in the right direction to get me started.",
+            "low": "I need guidance from someone while learning a new concept or skill."
+        }
+    },
+    {
+        "career": "Technology",
+        "skill": "Consistency and Error Checking",
+        "question": "You finished early on the Final Exam. What do you do next?",
+        "answers": {
+            "high": "Go back and check your work.",
+            "medium": "Sit back and relax.",
+            "low": "Turn it in early."
+        }
+    },
+    {
+        "career": "Service Industry",
+        "skill": "Time Management",
+        "question": "Imagine you are a host for a restaurant and you have a lot of people waiting to sit down. How do you proceed?",
+        "answers": {
+            "high": "Ask the servers to see if they can clean some tables so you can sit people down as soon as possible.",
+            "medium": "Check in with the servers to see if any tables opened up. Assure the customers that they will be seated soon.",
+            "low": "The customers can wait for an open table."
+        }
+    },
+    {
+        "career": "Service Industry",
+        "skill": "Attention to Detail",
+        "question": "How interested would you be in organizing a task which requires you to consider many minute details and different approaches?",
+        "answers": {
+            "high": "I'd love to organize such a task! ",
+            "medium": "I'd be somewhat interested, and would at least try to consider all the details and requirements",
+            "low": "I'd rather not! Digging into details tends to confuse me, and I tend to lose the sight of the main task."
+        }
+    },
+    {
+        "career": "Service Industry",
+        "skill": "Customer Service",
+        "question": "Choose the option that best describes you:",
+        "answers": {
+            "high": "I like to deal with people in general. I am patient when dealing with issues and have a “people-first” attitude.",
+            "medium": "I like to deal with people in general, but I can get annoyed sometimes when dealing with others or some issues.",
+            "low": "I don’t like to deal with people in general."
+        }
+    },
+    {
+        "career": "Service Industry",
+        "skill": "Verbal communication",
+        "question": "You are working on a group project and have been the only person contributing. You have 3 homework assignments due in other classes, 2 quizzes, and one test this week. How do you approach these competing obligations and amount of stress?",
+        "answers": {
+            "high": "I’ll inform my teacher and let them know that the group members have not been contributing, and text in the group chat that you really need help.",
+            "medium": "I’ll try to communicate my frustration to other group members in the group chat, but I’ll keep working on the project and other assignments regardless.",
+            "low": "I’ll keep working through the project and other assignments without raising any concern."
+        }
+    },
+    {
+        "career": "Service Industry",
+        "skill": "Conflict Resolution",
+        "question": "You are an employee placed in a confrontational situation where things are about to get physical. A customer is mad and is about to escalate the situation. How do you handle their temper?",
+        "answers": {
+            "high": "Let the customer know it was just a misunderstanding. Apologize and calmly remind them that you made a mistake and move on.",
+            "medium": "Ask for a manager to try and help you out.",
+            "low": "Try and defend yourself. If they hit you first, you can hit back."
+        }
+    },
+    {
+        "career": "Skilled Trade",
+        "skill": "Physical Strength",
+        "question": "Do you like to workout / lift weights?",
+        "answers": {
+            "high": "I am passionate about working out.",
+            "medium": "I have interests in working out and / or lifting weights.",
+            "low": "I don’t like to workout or do physical labor."
+        }
+    },
+    {
+        "career": "Skilled Trade",
+        "skill": "Ability to Improvise",
+        "question": "You are missing a piece for the lego project you are working on. How do you proceed?",
+        "answers": {
+            "high": "Use an existing part from another lego set.",
+            "medium": "Forcibly use an extra piece that doesn’t fit as a replacement.",
+            "low": "Ignore it. It’s just one piece."
+        }
+    },
+    {
+        "career": "Skilled Trade",
+        "skill": "Hand-eye coordination",
+        "question": "Do you like to play sports?",
+        "answers": {
+            "high": "Yes. I play fast-paced sports like basketball, football, tennis, soccer, hockey, etc.",
+            "medium": "Yes. I enjoy chill and relaxing sports like chess, golf, running / hiking, swimming, biking, martial arts, etc.",
+            "low": "I don’t play any sports.."
+        }
+    },
+    {
+        "career": "Skilled Trade",
+        "skill": "Precision / Detail - Oriented",
+        "question": "Somebody asks for directions to the nearest bus stop. How do you proceed?",
+        "answers": {
+            "high": "Give a detailed, street by street guide of how to reach the destination.",
+            "medium": "Tell them the exact street it is on.",
+            "low": "Point in the direction of where it’s at and let them figure it out."
+        }
+    },
+    {
+        "career": "Skilled Trade",
+        "skill": "Dexterity",
+        "question": "I am quick on my feet and I am good with working with my hands.",
+        "answers": {
+            "high": "Agreed. I am quick when it comes to doing labor that requires my hands.",
+            "medium": "I can be quick, but I prefer to take my time on most projects.",
+            "low": "I don’t really do a lot of work with my hands."
+        }
+    },
+    {
+        "career": "Architecture and Engineering",
+        "skill": "Problem Solving",
+        "question": "Your backpack is falling apart from years of usage. What is one way to go about this problem?",
+        "answers": {
+            "high": "Although other kids might make fun of you, use some duct tape to fix the holes.",
+            "medium": "Buy a new backpack.",
+            "low": "Not a big deal. Ignore it and move on."
+        }
+    },
+    {
+        "career": "Critical Thinking",
+        "skill": "Critical Thinking",
+        "question": "You are planning an after school dance for your school’s student body. How do you start?",
+        "answers": {
+            "high": "Survey the student body to get ideas and feedback.",
+            "medium": "Sit down and start planning with your school’s administration.",
+            "low": "No need to start now. The event is not until another 3 months and you have better, more important things to attend to."
+        }
+    },
+    {
+        "career": "Architecture and Engineering",
+        "skill": "Crafty",
+        "question": "Some new furniture came in the mail but needs to be assembled. What’s your next move?",
+        "answers": {
+            "high": "I love Do-It-Yourself projects so spend a lot of time assembling the furniture, reading",
+            "medium": "Ask for help since you are not very knowledgeable with tools and attempt to put it together with a partner.",
+            "low": "Although it's expensive, pay someone to put it together."
+        }
+    },
+    {
+        "career": "Architecture and Engineering",
+        "skill": "Innovative",
+        "question": "You’re working on a unique problem that not many people have solved before, but reached a mental roadblock. How do you proceed?",
+        "answers": {
+            "high": "Create your own solution to the problem. It may be wrong, but shows you’re able to think for yourself and back it up with evidence.",
+            "medium": "Ask a tutor / mentor for advice on how to solve it. They have prior experience working through this type of problem.",
+            "low": "Google search how others have done it. Save time."
+        }
+    },
+    {
+        "career": "Architecture and Engineering",
+        "skill": "Unconventional Thinking",
+        "question": "You are looking at clubs at school and seeing if they align with any topics you are very passionate about. What do you do?",
+        "answers": {
+            "high": "Create your own club because no one seems to be doing what you want to do.",
+            "medium": "Join a popular club and see if they can give your topic some attention.",
+            "low": "Don’t join any clubs."
+        }
+    },
+    {
+        "career": "Public Service",
+        "skill": "Decision Making",
+        "question": "You have to make a decision between two friends. Given that your vote will definitely hurt your relationship with either friend what would you do?",
+        "answers": {
+            "high": "I would listen to what each person has to say and come to a logical conclusion.",
+            "medium": "I would choose my best friend.",
+            "low": "I won’t make a decision as I would not  want to hurt anyone's feelings"
+        }
+    },
+    {
+        "career": "Public Service",
+        "skill": "Logical and articulate",
+        "question": "You are in a heated argument with someone. How do you proceed?",
+        "answers": {
+            "high": "Take the logical approach. Explain your argument thoroughly in hopes of convincing them.",
+            "medium": "Explain to them your qualifications and why you think based on your experience you are right.",
+            "low": "You are very emotional when you are fighting for something you really care about. Let them know that this is something you are passionate about and how important it is to you."
+        }
+    },
+    {
+        "career": "Public Service",
+        "skill": "Charismatic",
+        "question": "When it comes to making friends, what is your personality like?",
+        "answers": {
+            "high": "Extroverted. I love being surrounded by others and love meeting new people.",
+            "medium": "I am not against meeting new people but I usually don’t start the conversation.",
+            "low": "Introverted. I like to be by myself and keep to myself only."
+        }
+    },
+    {
+        "career": "Public Service",
+        "skill": "Orator / Debater",
+        "question": "You are debating a highly controversial issue in your class. How do you make your voice heard?",
+        "answers": {
+            "high": "Although you might mess up, you stand up and stick to the facts. Deliver a speech in front of your entire class with no script that briefly and succinctly goes over your message.",
+            "medium": "You don’t like conflict but you stick to your script and speak up against the other side.",
+            "low": "Stay quiet and don’t disrupt the debate."
+        }
+    },
+    {
+        "career": "Public Service",
+        "skill": "Confident",
+        "question": "Your friends taunt you to ask somebody you have been interested in for quite some time now to your formal / prom. Do you ask them out?",
+        "answers": {
+            "high": "Confidently walk up to them, introduce yourself, and ask them out.",
+            "medium": "You are nervous since you don’t know if they will say yes or no. You muster up some courage and decide to ask them out.",
+            "low": "Never. Hope they take a hint and ask you out instead."
+        }
+    }
+    
+]

@@ -54,4 +54,6 @@ function generateForms(numberOfForms = 1) {
 
 // Specify how many forms you want to make
 // node generateForm.js
-generateForms(5);
+// generateForms(5);
+
+const questions = require('./sampleJSONs/questions.json')
