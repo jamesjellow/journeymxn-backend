@@ -1,7 +1,7 @@
 // helpers/mongo.js
 const MongoClient = require('mongodb').MongoClient;
 const mongoose = require('mongoose');
-const uri = "mongodb+srv://Mugdhaa-P:trN41Dhy46GLAiAH@cluster0.ksqzk.mongodb.net/users?retryWrites=true&w=majority";
+const uri = process.env.URI;
 
 // Returns the database that it connected to
 async function connectToMongoDB(database = "users") {
