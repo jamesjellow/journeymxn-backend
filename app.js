@@ -6,15 +6,16 @@ const cors = require("cors");
 const session = require('express-session');
 
 // Environment Variables
-const PORT = process.env.PORT || 3000;
-const url = process.env.prod_url || "http://localhost:5000" 
+const PORT = process.env.PORT || 4000;
+const url = process.env.prod_url || "http://localhost:4000" 
 
 // Load Express
 var app = express();
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(methodOveride("_method"));
-app.use(cors({ origin: url, credentials: true }));
+// app.use(cors({ origin: url, credentials: true }));
+app.use(cors())
 app.use(session({
   secret: 'veryimportantsecret',
   resave: true,
@@ -33,19 +34,19 @@ Local_Strategy = require('./helpers/local_strategy');
 passport.use(Local_Strategy);
 
 // Setup response headers
-app.use( (req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", url);
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET,HEAD,OPTIONS,POST,PUT,DELETE"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
-  );
-  next();
-});
+// app.use( (req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", url);
+//   res.setHeader("Access-Control-Allow-Credentials", "true");
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "GET,HEAD,OPTIONS,POST,PUT,DELETE"
+//   );
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+//   );
+//   next();
+// });
 
 // Routers
 app.get('/', (req, res) =>
