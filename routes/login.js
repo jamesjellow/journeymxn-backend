@@ -18,8 +18,8 @@ passport.deserializeUser(function(id, done) {
 
 function verifyCredentialsNotNull(req, res, next){
     if (!req.body.email || !req.body.password || req.body.email.trim() === "" || req.body.password.trim() === ""){
-        console.log("Email and password cannot be null. Redirecting to /login")
-        res.redirect('/login');
+        //console.log("Email and password cannot be null. Redirecting to /login")
+        return res.redirect('/login');
     }
     else{
         next()
@@ -27,7 +27,9 @@ function verifyCredentialsNotNull(req, res, next){
 }
 
 router.get("/", (req, res) => {
-    res.send("Login Page: Redirection successful!");
+    //Gets called due to redirection
+    //statusCode 401 = Unauthorized access
+    return res.status(401).send("Login Page: Redirection successful!");
 });
 
 router.post("/", 

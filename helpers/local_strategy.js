@@ -14,12 +14,12 @@ const strategy =
         UserSchema.findOne({
             email: email
         }, (err, user) => {
-            console.log(email, ' tried to log in!');
+            //console.log(email, ' tried to log in!');
             //console.log(user);
             if (err)
                 return err;
             if (!user) {
-                console.log("Error: User does not exist.")
+                //console.log("Error: User does not exist.")
                 return done(null, false);
             }
             //console.log("User found in 'user' collection. ");
@@ -31,18 +31,18 @@ const strategy =
                     bcrypt.compare(password, user.password, function(err, res) {
                         if (err) {throw err;}
                         if (res == false){
-                            console.log("Error: Incorrect password.")
+                            //console.log("Error: Incorrect password.")
                             return done(null, false);
                         }
                         else{
-                              //Passwords match! Login successful!
-                            console.log("User ", email, "found. Login Successful!");
+                            //Passwords match! Admin credentials are valid.
+                            //console.log("User ", email, "found.");
                             return done(null, user);
                         }
                     });
 
                 } else {
-                    console.log("Unauthorized. USER Does NOT exist in 'admin' collection!!");
+                    //console.log("Unauthorized. USER Does NOT exist in 'admin' collection!!");
                     return done(null, false)
                 }
             })

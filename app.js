@@ -60,3 +60,5 @@ app.use("/logout", require("./routes/logout"));
 app.listen(PORT, function() {
   console.log(`Listening on Port ${PORT}.`);
 })
+
+module.exports = app;
