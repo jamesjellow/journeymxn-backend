@@ -18,7 +18,8 @@ router.post("/", (req, res) => {
     createFormResponse(req);
     res.status(201);
     console.log("POST /submitForm request (submit-form) | Status: " + res.statusCode);
-    res.send();
+    console.log(req.body);
+    res.send("Form Submitted!");
 });
 
 module.exports = router;
