@@ -7,6 +7,8 @@ const QuestionResponseSchema = new Schema({
     type: String,
     required: true
   },
+
+  // Ask Mugdhaa
   // subindustry: {
   //   type: String,
   //   required: false

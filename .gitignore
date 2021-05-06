@@ -3,3 +3,5 @@ form.json
 /node_modules
 index.js
 request.http
+# generateForm.js
+# /sampleJsons

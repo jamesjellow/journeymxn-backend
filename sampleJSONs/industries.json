@@ -1,0 +1,65 @@
+{ 
+    "Finance" : [ 
+        "Frugality", 
+        "Trend Analysis", 
+        "Coordination and Team Management", 
+        "Persuasion and Negotiation Skills",
+        "Public Speaking and Presentation"
+    ],
+    "Creative Media" : [ 
+        "Creativity", 
+        "Flexibility",
+        "Perfectionist / Hardworking",
+        "Imaginative",
+        "Musically Inclined"
+    ], 
+    "Education" : [ 
+        "Attention Grabbing",
+        "Conflict De-escalation",
+        "Punctual",
+        "Philanthropy",
+        "Optimism"
+    ], 
+    "Healthcare" : [ 
+        "Quick Thinking",
+        "Multitasking",
+        "Inductive and Deductive Reasoning",
+        "Biocentrism",
+        "Health enthusiast"
+    ], 
+    "Technology" : [ 
+        "Pattern Recognition",
+        "Math",
+        "Technology Fanatic",
+        "Independent Learner",
+        "Consistency and Error Checking"
+    ], 
+    "Service Industry" : [ 
+        "Time Management",
+        "Attention to Detail",
+        "Customer Service",
+        "Verbal Communication",
+        "Conflict Resolution"
+    ], 
+    "Skilled Trade" : [ 
+        "Physical Strength",
+        "Ability to Improvise",
+        "Hand-eye Coordination",
+        "Precision / Detail - Oriented",
+        "Dexterity"
+    ],
+    "Architecture and Engineering" : [ 
+        "Problem Solving",
+        "Critical Thinking",
+        "Crafty",
+        "Innovative",
+        "Unconvential Thinking"
+    ], 
+    "Public Service" : [ 
+        "Decision Making",
+        "Logical and Articulate",
+        "Charismatic",
+        "Orator / Debator",
+        "Confident"
+    ]
+}
