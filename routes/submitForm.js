@@ -10,7 +10,7 @@ QuestionResponse = require('../models/question_response');
 function createFormResponse(req) {
     newForm = FormResponse();
     newForm.zip_code = '92617';
-    console.log(newForm);
+    // console.log(newForm);
 }
 
 router.post("/", (req, res) => {
