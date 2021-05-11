@@ -213,7 +213,7 @@
     {
         "career": "Technology",
         "skill": "Math",
-        "question": "Consider the following problems:\\n1. Prove that all integers greater than 1 are a product of prime numbers.\\n2. “100 percent of convicted felons consumed bread during their childhood. ”People who consume bread as a child are likely to become felons.” Does the first statement logically imply the second?\\n3. McDonalds sells Chicken McNuggets in boxes of 6, 9, or 20. Obviously one could purchase exactly 15 McNuggets by buying a box of 6 and a box of 9. What is the largest number for which it is impossible to purchase exactly that number of McNuggets?\\n(Reference: http://jwilson.coe.uga.edu/EMAT6680Fa11/McIntyre/6600/algebra/McNuggetProblem.pdf)",
+        "question": "Consider the following problem: Prove that all integers greater than 1 are a product of prime numbers.",
         "answers": {
             "high": "I love to solve such problems!",
             "medium": "I like to solve other Math problems, but these problems don’t feel that exciting.",
