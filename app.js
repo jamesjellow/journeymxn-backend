@@ -20,7 +20,7 @@ app.use(session({
   secret: 'veryimportantsecret',
   resave: true,
   saveUninitialized:true,
-  cookie: {maxAge:300000} //5 minutes 
+  cookie: {maxAge:1800000} //30 minutes 
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -55,7 +55,11 @@ app.get('/', (req, res) =>
 app.use("/login", require("./routes/login"));
 app.use("/admin", require("./routes/admin"));
 app.use("/submitForm", require("./routes/submitForm"));
+app.use("/createUser", require("./routes/create-user"));
+app.use("/logout", require("./routes/logout"));
 
 app.listen(PORT, function() {
   console.log(`Listening on Port ${PORT}.`);
 })
+
+module.exports = app;
