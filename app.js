@@ -25,28 +25,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Connect to MongoDB via Mongoose asynchronously
-const { mongooseConnect } = require('./helpers/mongo.js');
-mongooseConnect();
-
 // Load Local Strategy
 Local_Strategy = require('./helpers/local_strategy');
 passport.use(Local_Strategy);
 
-// Setup response headers
-// app.use( (req, res, next) => {
-//   res.setHeader("Access-Control-Allow-Origin", url);
-//   res.setHeader("Access-Control-Allow-Credentials", "true");
-//   res.setHeader(
-//     "Access-Control-Allow-Methods",
-//     "GET,HEAD,OPTIONS,POST,PUT,DELETE"
-//   );
-//   res.setHeader(
-//     "Access-Control-Allow-Headers",
-//     "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
-//   );
-//   next();
-// });
 
 // Routers
 app.get('/', (req, res) =>

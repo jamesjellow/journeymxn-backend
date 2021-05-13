@@ -1,31 +1,33 @@
 {
-    "emailto": "bo@jib.nikon",
-    "zip_code": 33559,
+    "emailto": "riwo@ereci.ski",
+    "state": "CA",
+    "school_district": "Huntington Beach Union High",
+    "school_name": "Fountain Valley High",
     "responses": [
         {
             "industry": "Finance",
             "skill": "Frugality",
-            "score": 0
-        },
-        {
-            "industry": "Finance",
-            "skill": "Trend Analysis",
-            "score": 1
-        },
-        {
-            "industry": "Finance",
-            "skill": "Coordination and Team Management",
             "score": -1
         },
         {
             "industry": "Finance",
+            "skill": "Trend Analysis",
+            "score": -1
+        },
+        {
+            "industry": "Finance",
+            "skill": "Coordination and Team Management",
+            "score": 0
+        },
+        {
+            "industry": "Finance",
             "skill": "Persuasion and Negotiation Skills",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Finance",
             "skill": "Public Speaking and Presentation",
-            "score": 1
+            "score": 0
         },
         {
             "industry": "Creative Media",
@@ -50,27 +52,27 @@
         {
             "industry": "Creative Media",
             "skill": "Musically Inclined",
-            "score": 0
-        },
-        {
-            "industry": "Education",
-            "skill": "Attention Grabbing",
-            "score": 0
-        },
-        {
-            "industry": "Education",
-            "skill": "Conflict De-escalation",
-            "score": -1
-        },
-        {
-            "industry": "Education",
-            "skill": "Punctual",
             "score": 1
         },
         {
             "industry": "Education",
-            "skill": "Philanthropy",
+            "skill": "Attention Grabbing",
+            "score": -1
+        },
+        {
+            "industry": "Education",
+            "skill": "Conflict De-escalation",
+            "score": 1
+        },
+        {
+            "industry": "Education",
+            "skill": "Punctual",
             "score": 0
+        },
+        {
+            "industry": "Education",
+            "skill": "Philanthropy",
+            "score": 1
         },
         {
             "industry": "Education",
@@ -80,22 +82,22 @@
         {
             "industry": "Healthcare",
             "skill": "Quick Thinking",
-            "score": 0
+            "score": 1
         },
         {
             "industry": "Healthcare",
             "skill": "Multitasking",
-            "score": -1
+            "score": 1
         },
         {
             "industry": "Healthcare",
             "skill": "Inductive and Deductive Reasoning",
-            "score": 0
+            "score": 1
         },
         {
             "industry": "Healthcare",
             "skill": "Biocentrism",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Healthcare",
@@ -110,12 +112,12 @@
         {
             "industry": "Technology",
             "skill": "Math",
-            "score": -1
+            "score": 0
         },
         {
             "industry": "Technology",
             "skill": "Technology Fanatic",
-            "score": 0
+            "score": -1
         },
         {
             "industry": "Technology",
@@ -130,12 +132,12 @@
         {
             "industry": "Service Industry",
             "skill": "Time Management",
-            "score": -1
+            "score": 0
         },
         {
             "industry": "Service Industry",
             "skill": "Attention to Detail",
-            "score": 1
+            "score": 0
         },
         {
             "industry": "Service Industry",
@@ -145,17 +147,17 @@
         {
             "industry": "Service Industry",
             "skill": "Verbal Communication",
-            "score": 0
+            "score": 1
         },
         {
             "industry": "Service Industry",
             "skill": "Conflict Resolution",
-            "score": 1
+            "score": 0
         },
         {
             "industry": "Skilled Trade",
             "skill": "Physical Strength",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Skilled Trade",
@@ -180,7 +182,7 @@
         {
             "industry": "Architecture and Engineering",
             "skill": "Problem Solving",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Architecture and Engineering",
@@ -190,7 +192,7 @@
         {
             "industry": "Architecture and Engineering",
             "skill": "Crafty",
-            "score": 0
+            "score": -1
         },
         {
             "industry": "Architecture and Engineering",
@@ -200,22 +202,22 @@
         {
             "industry": "Architecture and Engineering",
             "skill": "Unconvential Thinking",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Public Service",
             "skill": "Decision Making",
-            "score": 0
+            "score": -1
         },
         {
             "industry": "Public Service",
             "skill": "Logical and Articulate",
-            "score": 0
+            "score": 1
         },
         {
             "industry": "Public Service",
             "skill": "Charismatic",
-            "score": -1
+            "score": 0
         },
         {
             "industry": "Public Service",
@@ -225,7 +227,7 @@
         {
             "industry": "Public Service",
             "skill": "Confident",
-            "score": 0
+            "score": 1
         }
     ]
 }

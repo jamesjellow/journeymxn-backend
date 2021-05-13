@@ -37,10 +37,23 @@ function getRandomIntInclusive(min, max) {
 
 function generateForms(numberOfForms = 1) {
     // Dumps a json object in /sampleJSONs
+
+    let schools = [
+        "Edison High",
+        "Fountain Valley High",
+        "Huntington Beach High",
+        "Marina High",
+        "Ocean View High",
+        "Westminster High",
+        "Valley Vista High (Continuation)",
+        "Coast High"
+    ]
     for (let i = 0; i < numberOfForms; i++) {
         form = {
             emailto: randomEmail(),
-            zip_code: Math.floor(Math.random()*90000) + 10000,
+            state : 'CA',
+            school_district : "Huntington Beach Union High",
+            school_name : schools[getRandomIntInclusive(0, schools.length -1 )]
         }
         responses = generateResponses(form._id);
         form.responses = responses;
@@ -54,6 +67,6 @@ function generateForms(numberOfForms = 1) {
 
 // Specify how many forms you want to make
 // node generateForm.js
-// generateForms(5);
+generateForms(3);
 
 const questions = require('./sampleJSONs/questions.json')

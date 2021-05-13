@@ -1,11 +1,13 @@
 {
-    "emailto": "decseri@debe.download",
-    "zip_code": 93224,
+    "emailto": "he@jalkij.tech",
+    "state": "CA",
+    "school_district": "Huntington Beach Union High",
+    "school_name": "Marina High",
     "responses": [
         {
             "industry": "Finance",
             "skill": "Frugality",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Finance",
@@ -15,12 +17,12 @@
         {
             "industry": "Finance",
             "skill": "Coordination and Team Management",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Finance",
             "skill": "Persuasion and Negotiation Skills",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Finance",
@@ -30,27 +32,27 @@
         {
             "industry": "Creative Media",
             "skill": "Creativity",
-            "score": -1
+            "score": 0
         },
         {
             "industry": "Creative Media",
             "skill": "Flexibility",
-            "score": -1
+            "score": 1
         },
         {
             "industry": "Creative Media",
             "skill": "Perfectionist / Hardworking",
-            "score": 1
+            "score": 0
         },
         {
             "industry": "Creative Media",
             "skill": "Imaginative",
-            "score": -1
+            "score": 1
         },
         {
             "industry": "Creative Media",
             "skill": "Musically Inclined",
-            "score": 1
+            "score": 0
         },
         {
             "industry": "Education",
@@ -60,12 +62,12 @@
         {
             "industry": "Education",
             "skill": "Conflict De-escalation",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Education",
             "skill": "Punctual",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Education",
@@ -90,17 +92,17 @@
         {
             "industry": "Healthcare",
             "skill": "Inductive and Deductive Reasoning",
-            "score": -1
+            "score": 1
         },
         {
             "industry": "Healthcare",
             "skill": "Biocentrism",
-            "score": -1
+            "score": 1
         },
         {
             "industry": "Healthcare",
             "skill": "Health enthusiast",
-            "score": 1
+            "score": 0
         },
         {
             "industry": "Technology",
@@ -120,12 +122,12 @@
         {
             "industry": "Technology",
             "skill": "Independent Learner",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Technology",
             "skill": "Consistency and Error Checking",
-            "score": -1
+            "score": 0
         },
         {
             "industry": "Service Industry",
@@ -135,22 +137,22 @@
         {
             "industry": "Service Industry",
             "skill": "Attention to Detail",
-            "score": 0
-        },
-        {
-            "industry": "Service Industry",
-            "skill": "Customer Service",
             "score": 1
         },
         {
             "industry": "Service Industry",
+            "skill": "Customer Service",
+            "score": 0
+        },
+        {
+            "industry": "Service Industry",
             "skill": "Verbal Communication",
-            "score": -1
+            "score": 1
         },
         {
             "industry": "Service Industry",
             "skill": "Conflict Resolution",
-            "score": 0
+            "score": -1
         },
         {
             "industry": "Skilled Trade",
@@ -160,7 +162,7 @@
         {
             "industry": "Skilled Trade",
             "skill": "Ability to Improvise",
-            "score": 0
+            "score": -1
         },
         {
             "industry": "Skilled Trade",
@@ -170,17 +172,17 @@
         {
             "industry": "Skilled Trade",
             "skill": "Precision / Detail - Oriented",
-            "score": -1
+            "score": 0
         },
         {
             "industry": "Skilled Trade",
             "skill": "Dexterity",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Architecture and Engineering",
             "skill": "Problem Solving",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Architecture and Engineering",
@@ -195,7 +197,7 @@
         {
             "industry": "Architecture and Engineering",
             "skill": "Innovative",
-            "score": -1
+            "score": 1
         },
         {
             "industry": "Architecture and Engineering",
@@ -205,7 +207,7 @@
         {
             "industry": "Public Service",
             "skill": "Decision Making",
-            "score": 0
+            "score": 1
         },
         {
             "industry": "Public Service",
@@ -225,7 +227,7 @@
         {
             "industry": "Public Service",
             "skill": "Confident",
-            "score": 1
+            "score": -1
         }
     ]
 }

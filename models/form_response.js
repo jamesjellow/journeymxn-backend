@@ -2,16 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const FormResponse = new Schema({
-
-    // user: { 
-    //   type: Schema.Types.ObjectId, 
-    //   required : false, 
-    //   ref: 'UserSchema'
-    // },
     emailto : String,
-    zip_code : Number,
-    school: String,
-    reccomendation: String,
+    state : String,
+    school_district : String, 
+    school_name: String,
+    reccomendations: String,
     dateSubmitted : {
       type: Date, 
       required: true,

@@ -1,8 +1,8 @@
 {
-    "emailto": "nijo@dufope.ping",
+    "emailto": "decseri@debe.download",
     "state": "CA",
-    "school_district": "Huntington Beach Union High",
-    "school_name": "Ocean View High",
+    "school_district" : "Huntington Beach Union High",
+    "school_name" : "Huntington Beach High",
     "responses": [
         {
             "industry": "Finance",
@@ -12,7 +12,7 @@
         {
             "industry": "Finance",
             "skill": "Trend Analysis",
-            "score": 0
+            "score": -1
         },
         {
             "industry": "Finance",
@@ -22,52 +22,52 @@
         {
             "industry": "Finance",
             "skill": "Persuasion and Negotiation Skills",
-            "score": 0
+            "score": 1
         },
         {
             "industry": "Finance",
             "skill": "Public Speaking and Presentation",
-            "score": 0
+            "score": -1
         },
         {
             "industry": "Creative Media",
             "skill": "Creativity",
-            "score": 0
+            "score": -1
         },
         {
             "industry": "Creative Media",
             "skill": "Flexibility",
-            "score": 0
+            "score": -1
         },
         {
             "industry": "Creative Media",
             "skill": "Perfectionist / Hardworking",
-            "score": -1
-        },
-        {
-            "industry": "Creative Media",
-            "skill": "Imaginative",
             "score": 1
         },
         {
             "industry": "Creative Media",
-            "skill": "Musically Inclined",
+            "skill": "Imaginative",
             "score": -1
+        },
+        {
+            "industry": "Creative Media",
+            "skill": "Musically Inclined",
+            "score": 1
         },
         {
             "industry": "Education",
             "skill": "Attention Grabbing",
-            "score": 0
-        },
-        {
-            "industry": "Education",
-            "skill": "Conflict De-escalation",
             "score": -1
         },
         {
             "industry": "Education",
+            "skill": "Conflict De-escalation",
+            "score": 1
+        },
+        {
+            "industry": "Education",
             "skill": "Punctual",
-            "score": 0
+            "score": 1
         },
         {
             "industry": "Education",
@@ -77,32 +77,32 @@
         {
             "industry": "Education",
             "skill": "Optimism",
-            "score": -1
+            "score": 0
         },
         {
             "industry": "Healthcare",
             "skill": "Quick Thinking",
-            "score": 0
+            "score": 1
         },
         {
             "industry": "Healthcare",
             "skill": "Multitasking",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Healthcare",
             "skill": "Inductive and Deductive Reasoning",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Healthcare",
             "skill": "Biocentrism",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Healthcare",
             "skill": "Health enthusiast",
-            "score": 0
+            "score": 1
         },
         {
             "industry": "Technology",
@@ -117,7 +117,7 @@
         {
             "industry": "Technology",
             "skill": "Technology Fanatic",
-            "score": -1
+            "score": 1
         },
         {
             "industry": "Technology",
@@ -127,47 +127,47 @@
         {
             "industry": "Technology",
             "skill": "Consistency and Error Checking",
-            "score": 0
+            "score": -1
         },
         {
             "industry": "Service Industry",
             "skill": "Time Management",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Service Industry",
             "skill": "Attention to Detail",
-            "score": 1
+            "score": 0
         },
         {
             "industry": "Service Industry",
             "skill": "Customer Service",
-            "score": -1
+            "score": 1
         },
         {
             "industry": "Service Industry",
             "skill": "Verbal Communication",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Service Industry",
             "skill": "Conflict Resolution",
-            "score": 1
+            "score": 0
         },
         {
             "industry": "Skilled Trade",
             "skill": "Physical Strength",
-            "score": -1
+            "score": 1
         },
         {
             "industry": "Skilled Trade",
             "skill": "Ability to Improvise",
-            "score": -1
+            "score": 0
         },
         {
             "industry": "Skilled Trade",
             "skill": "Hand-eye Coordination",
-            "score": -1
+            "score": 1
         },
         {
             "industry": "Skilled Trade",
@@ -182,7 +182,7 @@
         {
             "industry": "Architecture and Engineering",
             "skill": "Problem Solving",
-            "score": 0
+            "score": 1
         },
         {
             "industry": "Architecture and Engineering",
@@ -192,22 +192,22 @@
         {
             "industry": "Architecture and Engineering",
             "skill": "Crafty",
-            "score": -1
+            "score": 0
         },
         {
             "industry": "Architecture and Engineering",
             "skill": "Innovative",
-            "score": 1
+            "score": -1
         },
         {
             "industry": "Architecture and Engineering",
             "skill": "Unconvential Thinking",
-            "score": -1
+            "score": 0
         },
         {
             "industry": "Public Service",
             "skill": "Decision Making",
-            "score": 1
+            "score": 0
         },
         {
             "industry": "Public Service",
@@ -217,17 +217,17 @@
         {
             "industry": "Public Service",
             "skill": "Charismatic",
-            "score": 1
-        },
-        {
-            "industry": "Public Service",
-            "skill": "Orator / Debator",
             "score": 0
         },
         {
             "industry": "Public Service",
+            "skill": "Orator / Debator",
+            "score": 1
+        },
+        {
+            "industry": "Public Service",
             "skill": "Confident",
-            "score": -1
+            "score": 1
         }
     ]
 }
