@@ -102,7 +102,6 @@ async function main(req, res) {
         res.send("Form Submitted!");
         console.log("POST /submitForm request (submit-form) | Status: " + res.statusCode);
         
-        return newForm._id
     } catch (e) {
         res.status(500)
         res.send("Form Submission Failed :(");
