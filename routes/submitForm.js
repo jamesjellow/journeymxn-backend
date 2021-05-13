@@ -4,6 +4,7 @@
 
 const express = require('express');
 const router = express.Router();
+const nodemailer = require('nodemailer');
 
 FormResponse = require('../models/form_response');
 QuestionResponse = require('../models/question_response');
@@ -14,8 +15,41 @@ router.post("/", (req, res) => {
     main(req, res)
 });
 
-async function emailRecommendations(careerRecommendations) {
-    return null;
+async function emailRecommendations(careerRecommendations, emailto) {
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'noreplyjourneymxnbot@gmail.com',
+            pass: process.env.EMAIL_PASS
+        }
+    });
+
+    let body = "Thank you for taking the Journeymxn Quiz,\n\nHere are your results:\n\n"
+    for ( score of careerRecommendations) {
+        if (parseInt(score.key, 10) >= 0) 
+            body += ' '
+        body += `${score.key} : ${score.values.join(", ")}\n`
+        // console.log(score)
+        // score
+    }
+    body += "\n\n*Note: Higher scores indicate a better career fit. Lower scores indicate careers you would likely not enjoy."
+    const mailOptions = {
+        from: 'noreplyjourneymxnbot@gmail.com',
+        to: emailto,
+        subject: 'Journeymxn Quiz Results',
+        text: body
+    };
+
+    // console.log(body)
+    transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+        console.log(error);
+    } else {
+        console.log('Email sent: ' + info.response);
+    }
+});
+    
 }
 
 async function main(req, res) {
@@ -58,7 +92,10 @@ async function main(req, res) {
 
         // Generate Recommendations
         const careerRecommendations = await recommendCareers(question_responses);
-        console.log(careerRecommendations);
+        // console.log(careerRecommendations);
+
+        // Email Recommendations
+        emailRecommendations(careerRecommendations, newForm.emailto);
 
         // Send OK response
         res.status(201);

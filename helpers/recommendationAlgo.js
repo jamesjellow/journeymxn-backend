@@ -22,7 +22,8 @@ async function recommendCareers(responses){
     scoresByRank = new Map([...ScoreTally.entries()].sort((a, b) => b[0] - a[0]));
     for (let [key, value] of scoresByRank.entries()){
         curr = {}
-        curr[key] = value
+        curr.key = key
+        curr.values = value
         careers.push(curr) 
     }
     // console.log(careers);
