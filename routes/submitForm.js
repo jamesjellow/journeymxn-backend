@@ -56,13 +56,13 @@ async function main(req, res) {
 
     try {
         // Connect to MongoDB
-        client = await connectToMongoDB();
-        db = client.db('submissions');
-        form_response = db.collection('form_response');
-        question_response = db.collection('question_response');
+        // client = await connectToMongoDB();
+        // db = client.db('submissions');
+        // form_response = db.collection('form_response');
+        // question_response = db.collection('question_response');
         
-        form_response.drop();
-        question_response.drop();    
+        // form_response.drop();
+        // question_response.drop();    
 
         // Create the Form
         newForm = FormResponse({
@@ -87,8 +87,8 @@ async function main(req, res) {
         newForm.responses = question_responses;
         
         // Insert them into the database
-        form_response.insertOne(newForm);
-        question_response.insertMany(question_responses);
+        // form_response.insertOne(newForm);
+        // question_response.insertMany(question_responses);
 
         // Generate Recommendations
         const careerRecommendations = await recommendCareers(question_responses);
