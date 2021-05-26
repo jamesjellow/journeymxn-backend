@@ -11,11 +11,10 @@ const url = process.env.prod_url || "http://localhost:4000"
 
 // Load Express
 var app = express();
+app.use(cors({ credentials: true }));
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(methodOveride("_method"));
-// app.use(cors({ origin: url, credentials: true }));
-app.use(cors())
 app.use(session({
   secret: 'veryimportantsecret',
   resave: true,
