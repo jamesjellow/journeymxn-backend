@@ -12,6 +12,14 @@ const url = process.env.prod_url || "http://localhost:4000"
 // Load Express
 var app = express();
 app.use(cors({ credentials: true }));
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(methodOveride("_method"));
