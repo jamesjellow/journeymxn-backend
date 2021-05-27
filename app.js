@@ -1,41 +1,21 @@
 // app.js
 const express = require("express");
-const methodOveride = require("method-override");
-const passport = require("passport");
 const cors = require("cors");
-const session = require('express-session');
-
 // Environment Variables
 const PORT = process.env.PORT || 4000;
 const url = process.env.prod_url || "http://localhost:4000" 
 
 // Load Express
-var app = express();
-app.use(cors({ credentials: true }));
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-app.set("view engine", "ejs");
+const app = express();
+app.use(cors());
 app.use(express.json());
-app.use(methodOveride("_method"));
-app.use(session({
-  secret: 'veryimportantsecret',
-  resave: true,
-  saveUninitialized:true,
-  cookie: {maxAge:1800000} //30 minutes 
-}));
-app.use(passport.initialize());
-app.use(passport.session());
 
-// Load Local Strategy
-Local_Strategy = require('./helpers/local_strategy');
-passport.use(Local_Strategy);
-
+const { mongooseConnect } = require('./helpers/mongo.js');
+mongooseConnect().then(()=>{
+  app.listen(PORT, function() {
+    console.log(`Listening on Port ${PORT}.`);
+  })
+});
 
 // Routers
 app.get('/', (req, res) =>
@@ -46,9 +26,5 @@ app.use("/admin", require("./routes/admin"));
 app.use("/submitForm", require("./routes/submitForm"));
 app.use("/createUser", require("./routes/create-user"));
 app.use("/logout", require("./routes/logout"));
-
-app.listen(PORT, function() {
-  console.log(`Listening on Port ${PORT}.`);
-})
-
+  
 module.exports = app;

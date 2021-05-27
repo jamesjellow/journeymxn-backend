@@ -1,32 +1,37 @@
 const express = require('express');
 const router = express.Router();
-const AdminSchema = require("../models/admin") 
+const UserSchema = require("../models/user") 
+const jwt = require('jsonwebtoken')
 
+async function authenticateUser(req, res, next){
+    // console.log("REQ: ", req.headers)
+    const authHeader = req.headers["authorization"];
 
-function ensureAuthenticated(req, res, next) {
-    if (req.isAuthenticated())
-    {
-        if (req.session.passport.user != req.user.id){
-            //console.log("Error: 'session' user data and 'req' user data don't match.")
-            return res.redirect('/login');
-        }
-        AdminSchema.findOne({_id: req.user.id}).then((data) => {
-            //console.log(data)
-            if (data !== null) {
-                next()
-            } else {
-                //console.log("Admin not found. Redirecting to /login");
-                return res.redirect('/login');
+    if (authHeader){
+        const token = authHeader.split(" ")[1];
+        // console.log("TOKEN: ", token)
+        var decoded;
+        try{
+            decoded = jwt.verify(token, "SECRET")
+            console.log("DECODED: ", decoded)
+            const fetchExisting = await UserSchema.findOne({email: decoded.email})
+            if (fetchExisting.length == 0){
+                return res.status(401).json({message: "Error: User not found.", success: false});
             }
-        })
+            //Authentication Successful
+            //console.log("User in JWT Auth: ", fetchExisting)
+            next()
+        }catch(error){
+            return res.status(401).json({message: "JWT Authentication failed.", success: false});
+        }
+        next()
+    } else{
+        return res.status(401).json({message: "Authentication failed.", success: false}); 
     }
-    else
-        {//console.log("Unauthorized request. Redirecting to /login");
-        return res.redirect('/login');}
-};
+}
    
-router.get("/",ensureAuthenticated, (req, res) => {
-    //console.log("Request re-authenticated in GET method for /admin. Login Successful! ")
+router.get("/",authenticateUser, (req, res) => {
+    console.log("Request re-authenticated in GET method for /admin. Login Successful! ")
     return res.status(200).send('Access Granted! Welcome to Admin Page!');
 });
 

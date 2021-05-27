@@ -2,52 +2,47 @@
 
 const UserSchema = require("../models/user")
 const AdminSchema = require("../models/admin")
-const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
-const strategy = 
-    new LocalStrategy({
-        usernameField: 'email',
-        passwordField: 'password'
-    },
-    function(email, password, done) {
-        UserSchema.findOne({
-            email: email
-        }, (err, user) => {
-            //console.log(email, ' tried to log in!');
-            //console.log(user);
-            if (err)
-                return err;
-            if (!user) {
-                //console.log("Error: User does not exist.")
-                return done(null, false);
+login = async function (req, res, next) {
+    const email = req.body.email
+    const password = req.body.password 
+    try {
+        const fetchExisting = await UserSchema.findOne({email: email})
+        if (fetchExisting.length == 0){
+            console.log("User not found.")
+            return res.status(401).json({message: "Error: User not found.", success: false});
+        }
+        //User exists. Check if user is Admin
+        admin = await AdminSchema.findOne({_id: fetchExisting._id})
+        if (admin.length == 0){
+            console.log("User not found.")
+            return res.status(401).json({message: "Error: User not found.", success: false});
+        }
+        //User is an Admin. Verify Password
+        bcrypt.compare(password, fetchExisting.password, function(err, result) {
+            if (err) {throw err;}
+            if (result == false){
+                console.log("Error: Incorrect password.")
+                return res.status(401).json({message: "Error: Incorrect password.", success: false});
             }
-            //console.log("User found in 'user' collection. ");
-            AdminSchema.findOne({
-                _id: user._id
-            }).then((data) => {
-                if (data !== null) {
-                    //user._id also exists in the 'admin' collection 
-                    bcrypt.compare(password, user.password, function(err, res) {
-                        if (err) {throw err;}
-                        if (res == false){
-                            //console.log("Error: Incorrect password.")
-                            return done(null, false);
-                        }
-                        else{
-                            //Passwords match! Admin credentials are valid.
-                            //console.log("User ", email, "found.");
-                            return done(null, user);
-                        }
-                    });
-
+            else{
+                //Passwords match! Admin credentials are valid.
+                console.log("Passwords match. Authentication successful.");
+                const token = jwt.sign({email: fetchExisting.email}, "SECRET")
+                if (token){
+                    res.json({token:token, message: "Login Successful.", success: true})
+                    next()
                 } else {
-                    //console.log("Unauthorized. USER Does NOT exist in 'admin' collection!!");
-                    return done(null, false)
+                    return res.status(401).json({message: "Authentication failed.", success: false});
                 }
-            })
+            }
         });
-    })
+    }
+    catch (error){
+        return res.status(401).json({message: "Error: User not found.", success: false});
+    }
+}
 
-
-module.exports = strategy
+module.exports = login
