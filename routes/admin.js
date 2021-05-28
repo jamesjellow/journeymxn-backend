@@ -13,7 +13,7 @@ async function authenticateUser(req, res, next){
         var decoded;
         try{
             decoded = jwt.verify(token, "SECRET")
-            console.log("DECODED: ", decoded)
+            // console.log("DECODED: ", decoded)
             const fetchExisting = await UserSchema.findOne({email: decoded.email})
             if (fetchExisting.length == 0){
                 return res.status(401).json({message: "Error: User not found.", success: false});
@@ -31,7 +31,7 @@ async function authenticateUser(req, res, next){
 }
    
 router.get("/",authenticateUser, (req, res) => {
-    console.log("Request re-authenticated in GET method for /admin. Login Successful! ")
+    // console.log("Request re-authenticated in GET method for /admin. Login Successful! ")
     return res.status(200).send('Access Granted! Welcome to Admin Page!');
 });
 

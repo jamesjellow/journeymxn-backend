@@ -13,11 +13,11 @@ function verifyCredentialsNotNull(req, res, next){
 }
 
 router.get("/", (req, res) => {
-    return res.status(200);
+    res.sendStatus(200);
   });
   
 router.post("/", verifyCredentialsNotNull, login, (req, res) => {
-    return res.status(200);
+    
 })
 
 module.exports = router;

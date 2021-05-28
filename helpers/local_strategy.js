@@ -33,16 +33,17 @@ login = async function (req, res, next) {
                 const token = jwt.sign({email: fetchExisting.email}, "SECRET")
                 if (token){
                     res.json({token:token, message: "Login Successful.", success: true})
-                    next()
+                    next();
                 } else {
                     return res.status(401).json({message: "Authentication failed.", success: false});
                 }
             }
         });
+
     }
     catch (error){
         return res.status(401).json({message: "Error: User not found.", success: false});
-    }
+    } 
 }
 
 module.exports = login
